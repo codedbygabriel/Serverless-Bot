@@ -1,4 +1,4 @@
-import { ServerlessBot } from "./entities/server.js"
+const ServerlessBot = require("./entities/server.js");
 
 
 (() => {
