@@ -1,0 +1,24 @@
+{
+  "name": "serverless-bot",
+  "version": "1.0.0",
+  "description": "This bot`s meant to help organize and manage my college server.",
+  "homepage": "https://github.com/codedbygabriel/Serverless-Bot#readme",
+  "bugs": {
+    "url": "https://github.com/codedbygabriel/Serverless-Bot/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codedbygabriel/Serverless-Bot.git"
+  },
+  "license": "ISC",
+  "author": "Joao Gabriel (codedbygabriel)",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "discord.js": "^14.26.4",
+    "dotenv": "^17.4.2"
+  }
+}
