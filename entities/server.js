@@ -25,6 +25,8 @@ class ServerlessBot {
         })
 
         this.client.commands = new Collection();
+        
+        this.client.commands.forEach(c => console.log(c))
     };
 
     #loginBot = () => this.client.login(process.env.DISCORD_TOKEN);
