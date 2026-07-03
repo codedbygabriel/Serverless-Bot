@@ -10,7 +10,7 @@
 
 ## Goals / Future commands.
 
-- foo (A command to create a voice channel with a specific number of students);
-- bar (A command to create a topic about a certain subject);
-- recommend more!
+- [x] create_channel -> (A command to create a voice channel with a specific number of students);
+- [x] added restraints to avoid user errors e.g.: wrong text channel; wrong range of users for a voice channel;
+- [ ] a initializer, helping becoming really server agnostic.
 
