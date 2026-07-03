@@ -55,12 +55,21 @@ class ServerlessBot {
             if (!interaction.isChatInputCommand()) return;
 
             const channels = interaction.guild.channels.cache;
-            const _channels = channels.find(c => c.name === 'ask-bot' && c.type === ChannelType.GuildText);
+            let _channels = channels.find(c => c.name === 'ask-bot' && c.type === ChannelType.GuildText);
+            let botArea = channels.find(c => c.name === 'Serverless Area' && c.type === ChannelType.GuildCategory);
+
+            if (!botArea) {
+                botArea = await interaction.guild.channels.create({
+                    name: 'Serverless Area',
+                    type: ChannelType.GuildCategory,
+                })
+            }
 
             if (!_channels) {
-                await interaction.guild.channels.create({
+                _channels = await interaction.guild.channels.create({
                     name: 'ask-bot',
                     type: ChannelType.GuildText,
+                    parent: botArea.id,
                 })
             }
 

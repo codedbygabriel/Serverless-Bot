@@ -24,12 +24,15 @@ module.exports = {
 
         let _channels = channels.find((c) => c.name === 'bot-responses' && c.type === ChannelType.GuildText);
         let studyChannel = channels.find((c) => c.name === 'Study Channel' && c.type === ChannelType.GuildCategory);
+        let botArea = channels.find((c) => c.name === 'Serverless Area' && c.type === ChannelType.GuildCategory);
 
         if (!_channels)
             _channels = await interaction.guild.channels.create({
                 name: 'bot-responses',
                 type: ChannelType.GuildText,
+                parent: botArea.id,
             })
+
 
         if (!studyChannel)
             studyChannel = await interaction.guild.channels.create({
