@@ -3,7 +3,8 @@ const {
     GatewayIntentBits,
     Events,
     Collection,
-    MessageFlags 
+    MessageFlags, 
+    ChannelType
 } = require("discord.js");
 const fs = require("node:fs")
 const path = require("node:path")
@@ -52,6 +53,24 @@ class ServerlessBot {
 
         this.client.on(Events.InteractionCreate, async (interaction) => {
             if (!interaction.isChatInputCommand()) return;
+
+            const channels = interaction.guild.channels.cache;
+            const _channels = channels.find(c => c.name === 'ask-bot' && c.type === ChannelType.GuildText);
+
+            if (!_channels) {
+                await interaction.guild.channels.create({
+                    name: 'ask-bot',
+                    type: ChannelType.GuildText,
+                })
+            }
+
+            if(!_channels || !(interaction.channelId === _channels.id)) {
+                return await interaction.reply({
+                    content: `**${interaction.user.globalName}** - You can only use commands on **${_channels.name}!**`,
+                    flag: MessageFlags.Ephemeral,
+                })
+            }
+
 
             const order = interaction.client.commands.get(interaction.commandName);
             if (!order) return;
