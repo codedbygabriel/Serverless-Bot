@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, ChannelType } = require("discord.js");
+const { SlashCommandBuilder, ChannelType, MessageFlags } = require("discord.js");
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -16,13 +16,21 @@ module.exports = {
               ),
 
     async execute(interaction) {
-        interaction.reply(`Executing Creating Channels!`);
+        await interaction.deferReply({flags: MessageFlags.Ephemeral});
         const channel = interaction.options.getString('channel');
         const students = interaction.options.getInteger('students');
 
         const channels = interaction.guild.channels.cache;
 
-        let studyChannel = channels.find((c) => c.name === 'Study Channel')
+        let _channels = channels.find((c) => c.name === 'bot-responses' && c.type === ChannelType.GuildText);
+        let studyChannel = channels.find((c) => c.name === 'Study Channel' && c.type === ChannelType.GuildCategory);
+
+        if (!_channels)
+            _channels = await interaction.guild.channels.create({
+                name: 'bot-responses',
+                type: ChannelType.GuildText,
+            })
+
         if (!studyChannel)
             studyChannel = await interaction.guild.channels.create({
                 name: 'Study Channel',
@@ -35,9 +43,12 @@ module.exports = {
             reason: 'No Reason Provided.',
             type: ChannelType.GuildVoice,
             parent: studyChannel.id,
-            userLimit: students,
+            userLimit: students <= 99 && students > 0 ? students : 10,
         })
         .then(console.log)
         .catch(console.error)
+
+        await _channels.send(`Creating **${channel}** was a success!`)
+        interaction.editReply(`Creating **${channel}** was a success!`);
     }
 }
