@@ -1,10 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+:root {
+    --bg: #282828;
+    --bg1: #1d2021;
+    --bg0_s: #32302f;
+    --fg: #d5c4a1;
+    --gray:#a89984;
+    --bg2: #504945;
+    
+}
+
 * {
     font-family: 'Inter';
 
     margin: 0; padding:  0; border: none;
     list-style-type: none;
+    scroll-behavior: smooth;
 }
 
 h1,
@@ -15,6 +26,13 @@ h5 {
     font-family: 'Domine', 'Inter', 'Serif';
 }
 
+body {
+    background-color: var(--bg1);
+    color: var(--fg);
+}
+.odd-page {
+    background-color: var(--bg);
+}
 .container {
     height: 100vh;
 
@@ -23,4 +41,64 @@ h5 {
 
     justify-content: center;
     align-items: center;
+
+    padding: 2rem;
+    gap: 1rem;
+
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+.header-container {
+    display: flex;
+    flex-flow: column wrap;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.header-title { 
+    font-size: 4rem;
+}
+.sub-header-title {
+    font-size: 2rem;
+    font-weight: 400;
+}
+.header-title,
+.sub-header-title {
+    text-align: center;
+}
+
+.page-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2rem;
+}
+
+.page-button {
+    font-size: 1rem;
+
+    padding: 1rem;
+    border-radius: .6rem;
+    background-color: var(--fg);
+}
+
+.page-button > a:any-link, a, a:visited {
+    text-decoration: none;
+    color: var(--bg)
+}
+
+.header-description {
+    max-width: 768px;
+
+    color: var(--gray);
+    text-align: justify;
+}
+
+.command-summary {
+    margin-top: 1rem;
+    padding-bottom:0.2rem;
+
+    list-style-type: circle;
+    border-bottom: 3px solid var(--bg2);
 }
