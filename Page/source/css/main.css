@@ -1,3 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 * {
-    font-family: 'iosevka';
+    font-family: 'Inter';
+
+    margin: 0; padding:  0; border: none;
+    list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Domine', 'Inter', 'Serif';
+}
+
+.container {
+    height: 100vh;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    justify-content: center;
+    align-items: center;
 }
