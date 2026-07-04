@@ -10,41 +10,47 @@
     <body>
         <main>
             <article class="container">
-                <header>
-                   <h1>Serverless Bot</h1>
-                   <p>
+                <header class="header-container">
+                   <h1 class="header-title">Serverless Bot</h1>
+                   <p class="header-description">
                        Usually students often needs a discord group chat to create topics, voice channels, study groups etca. This bot aims towards that.
                    </p>
                 </header>
-                <nav>
-                    <button type="button">
+                <nav class="page-buttons">
+                    <button type="button" class="page-button">
                         <a  rel="referred" 
                             target="_blank" 
                             href="https://discord.com/oauth2/authorize?client_id=1522205022635561000">
                             Get Me An Invite!
                         </a>
                     </button>
-                    <button type="button">
+                    <button type="button" class="page-button">
                         <a href="#definitions-container">Learn More!</a>
                     </button>
                 </nav>
             </article>
+
+        </main>
+        <div class="odd-page">
             <article class="container" id="definitions-container">
-                <header>
-                    <h2>An Agnostic Bot, What?</h2>
-                    <p>
+                <header class="header-container"">
+                    <h2 class="header-title">An Agnostic Bot, What?</h2>
+                    <p class="header-description">
                         Although we have a rigid structure, they'll adapt to you server, agnostically.
                     </p>
                 </header>
                 <section>
-                    <h2>Commands, a new way of handling study sections!</h2>
-                    <p>
-                        As your own server grows in size, the number of people that need to create study channels 
-                    </p>
+                    <header class="header-container">
+
+                        <h2 class="sub-header-title">Commands, a new way of handling study sections!</h2>
+                        <p class="header-description">
+                            As your own server grows in size, the number of people that need to create study channels 
+                        </p>
+                    </header>
                     <ul>
                         <li>
                            <details>
-                                <summary>Starter Kit</summary>
+                                <summary class="command-summary">Starter Kit</summary>
                                 <p>
                                     If not obvious enough, it's your start point. It creates all necessary Categories and Channels.
                                 </p>
@@ -53,7 +59,7 @@
                         </li>
                         <li>
                             <details>
-                                <summary>Create Channel</summary>
+                                <summary class="command-summary">Create Channel</summary>
                                 <p>
                                     Starts a input section that allows you to input a Channel Name and how many Students will be allowed to join. Also have a time limit option [defaults to a hour].
                                 </p>
@@ -62,7 +68,7 @@
                         </li>
                         <li>
                             <details>
-                                <summary>Presentation</summary>
+                                <summary class="command-summary">Presentation</summary>
                                 <p>
                                     Just a cute hello world, it was my start point for this bot. Maintained for Legacy reasons (xD).
                                 </p>
@@ -71,8 +77,7 @@
                         </li>
                     </ul>
                 </section>
-
             </article>
-        </main>
+        </div>
     </body>
 </html>
