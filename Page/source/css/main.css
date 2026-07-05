@@ -102,3 +102,7 @@ body {
     list-style-type: circle;
     border-bottom: 3px solid var(--bg2);
 }
+
+.command-container {
+    max-width: 768px;
+}
