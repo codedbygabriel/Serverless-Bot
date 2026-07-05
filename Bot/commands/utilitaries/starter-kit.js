@@ -19,7 +19,7 @@ module.exports = {
         let serverlessArea = channels.find((c) => c.name === 'Serverless Area' && c.type === ChannelType.GuildCategory);
         let botResponses   = channels.find((c) => c.name === 'bot-responses' && c.type === ChannelType.GuildText);
         let askBot         = channels.find((c) => c.name === 'ask-bot' && c.type === ChannelType.GuildText);
-        
+
         if(!serverlessArea) {
             serverlessArea = await interaction.guild.channels.create({
                 name: 'Serverless Area',
@@ -33,6 +33,7 @@ module.exports = {
                 type: ChannelType.GuildCategory,
             })
         }
+
         
         if(!botResponses) {
             botResponses = await interaction.guild.channels.create({
