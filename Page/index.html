@@ -9,7 +9,7 @@
     </head>
     <body>
         <main>
-            <article class="container">
+            <article class="container" id="init">
                 <header class="header-container">
                    <h1 class="header-title">Serverless Bot</h1>
                    <p class="header-description">
@@ -31,7 +31,7 @@
             </article>
 
         </main>
-        <div class="odd-page">
+        <div class="odd-page" id="mid">
             <article class="container" id="definitions-container">
                 <header class="header-container"">
                     <h2 class="header-title">An Agnostic Bot, What?</h2>
@@ -51,33 +51,40 @@
                         <li>
                            <details class="command-container">
                                 <summary class="command-summary">Starter Kit</summary>
-                                <p>
+                                <p class="command-paragraph">
                                     If not obvious enough, it's your start point. It creates all necessary Categories and Channels.
                                 </p>
-                                <code>/starter_kit</code>
+                                <code class="command-code">/starter_kit</code>
                         </details>
                         </li>
                         <li>
                             <details class="command-container">
                                 <summary class="command-summary">Create Channel</summary>
-                                <p>
+                                <p class="command-paragraph">
                                     Starts a input section that allows you to input a Channel Name and how many Students will be allowed to join. Also have a time limit option [defaults to a hour].
                                 </p>
-                                <code>/create_channel</code>
+                                <code class="command-code">/create_channel</code>
                             </details>
                         </li>
                         <li>
                             <details class="command-container">
                                 <summary class="command-summary">Presentation</summary>
-                                <p>
+                                <p class="command-paragraph">
                                     Just a cute hello world, it was my start point for this bot. Maintained for Legacy reasons (xD).
+                                <code class="command-code">/presentation</code>
                                 </p>
-                                <code>/presentation</code>
                             </details>
                         </li>
                     </ul>
                 </section>
             </article>
         </div>
+        <div class="container" id="end">
+            <header class="header-container">
+               <h2 class="header-title">Our Policies</h2>
+               <p class="header-description">All our codebase's <strong>free</strong> to employ any adjusts that you feel as <strong>necessary</strong>, we <em>don't collect data nor personal</em> informations.</p>
+            </header>
+        </div>
+        <script src="./source/code/main.js"></script>
     </body>
 </html>
