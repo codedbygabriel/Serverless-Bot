@@ -14,12 +14,12 @@ module.exports = {
                                              .setRequired(false)
                                    ),
     async execute(interaction) {
-        const forumName         = interaction.options.getString('topic-name');
+        const forumName         = validateForumName(interaction.options.getString('topic-name'));
         const forumGuideline    = interaction.options.getString('topic-guideline');
         const channels          = interaction.guild.channels.cache;
-
         const studyChannel = channels.find((c) => c.name === 'Study Channel' && c.type === ChannelType.GuildCategory);
 
+        console.log(forumName);
         await interaction.deferReply({flags: MessageFlags.Ephemeral});
         try {
             const studyForum = await interaction.guild.channels.create({
@@ -38,4 +38,9 @@ module.exports = {
     }
 }
 
+const validateForumName = (forumName) => {
+    let _forumName = forumName.replaceAll(' ', `-`)
+                     .toLowerCase()
 
+    return _forumName;
+}
