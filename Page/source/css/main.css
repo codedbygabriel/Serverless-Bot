@@ -93,6 +93,7 @@ body {
 
     color: var(--gray);
     text-align: justify;
+    padding: 1rem 0;
 }
 
 .command-summary {
@@ -101,6 +102,10 @@ body {
 
     list-style-type: circle;
     border-bottom: 3px solid var(--bg2);
+}
+.command-summary:hover {
+    cursor: pointer;
+    font-weight: bolder;
 }
 
 .command-container {
